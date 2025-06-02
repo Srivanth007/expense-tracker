@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "api/*.py", "use": "@vercel/python" }
+  ],
+  "routes": [
+    { "src": "/api/drive_read", "dest": "/api/drive_read.py" },
+    { "src": "/api/drive_write", "dest": "/api/drive_write.py" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
+}

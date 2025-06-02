@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Expense Tracker</title>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <style>
+        body { font-family: Arial; text-align: center; padding: 20px; }
+        input { margin: 5px; padding: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Expense Tracker</h1>
+    <div id="g_id_onload"
+        data-client_id="727904832101-504or54aovppgm2otd0tqv18ne64u0g2.apps.googleusercontent.com"
+        data-callback="handleCredentialResponse">
+    </div>
+    <div class="g_id_signin" data-type="standard"></div>
+
+    <div id="app" style="display:none;">
+        <h2>Month: <span id="currentMonth"></span></h2>
+        <label>Monthly Salary: </label>
+        <input type="number" id="salaryInput" placeholder="e.g. 50000">
+        <button onclick="setSalary()">Save Salary</button>
+
+        <h3>Add Expense</h3>
+        <input type="text" id="expense-name" placeholder="Expense name">
+        <input type="number" id="expense-amount" placeholder="Amount">
+        <button onclick="addExpense()">Add</button>
+
+        <h3>Summary</h3>
+        <p><strong>Salary:</strong> ₹<span id="salaryDisplay">0</span></p>
+        <p><strong>Total Expenses:</strong> ₹<span id="expenseDisplay">0</span></p>
+        <p><strong>Remaining Balance:</strong> ₹<span id="balanceDisplay">0</span></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
