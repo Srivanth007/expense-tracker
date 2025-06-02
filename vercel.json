@@ -1,11 +1,37 @@
 {
   "version": 2,
   "builds": [
-    { "src": "api/*.py", "use": "@vercel/python" }
+    {
+      "src": "api/drive.py",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "script.js",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "style.css",
+      "use": "@vercel/static"
+    }
+  
   ],
   "routes": [
-    { "src": "/api/drive_read", "dest": "/api/drive_read.py" },
-    { "src": "/api/drive_write", "dest": "/api/drive_write.py" },
-    { "src": "/(.*)", "dest": "/index.html" }
+    {
+      "src": "/api/drive_read",
+      "dest": "/api/drive_read.py"
+    },
+    {
+      "src": "/api/drive_write",
+      "dest": "/api/drive_write.py"
+    },
+   
+    {
+      "src": "/",
+      "dest": "/index.html"
+    }
   ]
 }
